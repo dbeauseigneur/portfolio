@@ -1,0 +1,27 @@
+PortfolioBundle\Entity\Category:
+    type: entity
+    table: null
+    repositoryClass: PortfolioBundle\Repository\CategoryRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+
+    fields:
+        name:
+            type: string
+            length: '30'
+            unique: true
+        slug:
+            type: string
+            length: '40'
+            unique: true
+
+    manyToMany:
+        posts:
+          targetEntity: Post
+          mappedBy: categorys
+
+    lifecycleCallbacks: {  }

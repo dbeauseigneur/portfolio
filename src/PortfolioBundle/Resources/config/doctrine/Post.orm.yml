@@ -1,0 +1,49 @@
+PortfolioBundle\Entity\Post:
+    type: entity
+    table: null
+    repositoryClass: PortfolioBundle\Repository\PostRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        title:
+            type: string
+            length: 255
+            unique: true
+        slug:
+            type: string
+            length: 255
+            unique: true
+        publicationDate:
+            type: datetime
+            column: publication_date
+        content:
+            type: text
+        openComment:
+            type: boolean
+            column: open_comment
+        status:
+            type: boolean
+
+    oneToMany:
+        comments:
+            targetEntity: Comment
+            mappedBy: post
+
+    manyToMany:
+        categorys:
+            targetEntity: Category
+            inversedBy: posts
+            joinTable:
+                name: posts_categorys
+                joinColumns:
+                    post_id:
+                        referencedColumnName: id
+                inverseJoinColumns:
+                    category_id:
+                        referencedColumnName: id
+
+    lifecycleCallbacks: {  }
