@@ -8,6 +8,13 @@ class DefaultController extends Controller
 {
     public function indexAction()
     {
-        return $this->render('PortfolioBundle:Default:index.html.twig');
+        //$myService = $this->get ('app.my_service');
+        //$myService->getLogger()->debug('homePage',array());
+        return $this->render(':default:index.html.twig');
+    }
+
+    public function whoIAmAction()
+    {
+        return $this->render(':default:whoiam.html.twig');
     }
 }

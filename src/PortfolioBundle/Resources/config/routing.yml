@@ -1,3 +1,20 @@
+portfolio_post:
+    resource: "@PortfolioBundle/Resources/config/routing/post.yml"
+    prefix:   /post
+
+portfolio_comment:
+    resource: "@PortfolioBundle/Resources/config/routing/comment.yml"
+    prefix:   /comment
+
+portfolio_category:
+    resource: "@PortfolioBundle/Resources/config/routing/category.yml"
+    prefix:   /category
+
+
 portfolio_homepage:
     path:     /
     defaults: { _controller: PortfolioBundle:Default:index }
+
+portfolio_whoiam:
+    path:     /qui-suis-je
+    defaults: { _controller: PortfolioBundle:Default:whoIAm}

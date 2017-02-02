@@ -7,3 +7,6 @@ services:
 #    service_name:
 #        class: AppBundle\Directory\ClassName
 #        arguments: ["@another_service_name", "plain_value", "%parameter_name%"]
+#    app.my_service:
+#        class: PortfolioBundle\Service\MyService
+#        arguments: ['@logger']
